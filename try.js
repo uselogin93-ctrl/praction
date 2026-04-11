@@ -23,3 +23,40 @@ function outer() {
 const fn = outer();
 fn();
 fn();
+
+// Q.5
+function createUser(name) {
+    let userName = name;
+
+    return {
+        getName: function () {
+            return userName;
+        },
+        setName: function (newName) {
+            userName = newName;
+        }
+    };
+}
+
+const user = createUser("Shashi");
+
+console.log(user.getName()); // Shashi
+user.setName("Giri");
+console.log(user.getName()); // Giri
+user.setName("Nishi");
+console.log(user.getName());
+
+// Q.6
+const obj = {
+  name: "JS",
+  getName: function () {
+    console.log(this.name);
+  }
+};
+obj.getName();
+
+// Q.7
+function show() {
+  console.log(this);
+}
+show();
