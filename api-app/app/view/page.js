@@ -1,17 +1,17 @@
 "use client"
 import React from 'react'
 import { useState, useEffect } from "react";
-import clientPromise from "@/lib/mongodb";
 
 const View = () => {
     const [user, setUser] = useState([]);
 
     useEffect(() => {
         const fetchUser = async () => {
-            const client = await clientPromise;
-            const db = client.db("myDatabase");
-            const users = await db.collection("users").find({}).toArray();
-            setUser(users);
+            const response = await fetch('/api/user');
+            const data = await response.json();
+            if (data.success) {
+                setUser(data.data);
+            }
         };
         fetchUser();
     }, []);
@@ -23,7 +23,7 @@ const View = () => {
                 <li key={item._id}>{item.username}</li>
             ))}
         </ul>
-    </div>  
+    </div>
   )
 }
 
