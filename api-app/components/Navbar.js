@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6">
-      <div className="bg-slate-900/60 backdrop-blur-xl border border-white/10 px-6 py-3 rounded-full shadow-2xl flex items-center gap-8 transition-all hover:border-white/20">
+      <div className=" px-6 py-3 rounded-full shadow-2xl flex items-center gap-8 transition-all hover:border-white/20">
         <div className="flex items-center gap-2 mr-4">
           <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center">
             <span className="text-white font-bold text-xs">MG</span>
